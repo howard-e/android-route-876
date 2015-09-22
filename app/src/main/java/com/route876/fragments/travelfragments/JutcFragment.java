@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.route876.R;
-import com.route876.fragments.jutcstartlocationfragments.JutcStartLocationFragment;
+import com.route876.fragments.JutcStartLocationFragment;
 
 import java.util.Locale;
 
@@ -70,19 +70,16 @@ public class JutcFragment extends Fragment {
             Bundle args = new Bundle();
             switch (position) {
                 case 0:
-//                    fragment = new KingstonFragment();
                     args.putString("StartLocation", "Kingston");
                     fragment = new JutcStartLocationFragment();
                     fragment.setArguments(args);
                     break;
                 case 1:
-//                    fragment = new PortmoreFragment();
                     args.putString("StartLocation", "Portmore");
                     fragment = new JutcStartLocationFragment();
                     fragment.setArguments(args);
                     break;
                 case 2:
-//                    fragment = new SpanishTownFragment();
                     args.putString("StartLocation", "Spanish Town");
                     fragment = new JutcStartLocationFragment();
                     fragment.setArguments(args);

@@ -1,4 +1,4 @@
-package com.route876.fragments.jutcstartlocationfragments;
+package com.route876.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -23,20 +23,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Howard on 9/13/2015.
+ * Created by Howard on 9/22/2015.
  */
-public class PortmoreFragment extends Fragment {
+public class JutcStartLocationFragment extends Fragment {
+
+    String startLocationString;
     ArrayList<Route> routesList = new ArrayList<>();
-    ArrayList<Route> portmoreRoutesList = new ArrayList<>();
+    ArrayList<Route> rList = new ArrayList<>();
     ArrayList<String> routeStops = new ArrayList<>();
 
     ListView routeListView;
     RouteInfoFragment routeInfoFragment = new RouteInfoFragment();
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getRoutes();
+        String routeTag = "";
+        startLocationString = getArguments().getString("StartLocation");
+        if (startLocationString.equals("Kingston"))
+            routeTag = "K";
+        else if (startLocationString.equals("Portmore"))
+            routeTag = "P";
+        else if (startLocationString.equals("Spanish Town"))
+            routeTag = "S";
+        setUpRoutes(routeTag);
     }
 
     @Nullable
@@ -45,7 +55,7 @@ public class PortmoreFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.route_listview, container, false);
         routeListView = (ListView) rootView.findViewById(R.id.route_listview);
         routeInfoFragment = new RouteInfoFragment();
-        CustomRouteAdapter customRouteAdapter = new CustomRouteAdapter(getActivity(), portmoreRoutesList);
+        CustomRouteAdapter customRouteAdapter = new CustomRouteAdapter(getActivity(), rList);
 
         routeListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -54,7 +64,7 @@ public class PortmoreFragment extends Fragment {
                 TextView bus_textview_num = (TextView) view.findViewById(R.id.route_num);
                 String busNum = bus_textview_num.getText().toString();
 
-                List<String> routeStopsList = portmoreRoutesList.get(position).getRouteStops();
+                List<String> routeStopsList = rList.get(position).getRouteStops();
                 if (routeStopsList != null) {
                     System.out.println("Route List right here: " + routeStopsList.toString());
                     for (int i = 0; i < routeStopsList.size(); i++) {
@@ -81,11 +91,13 @@ public class PortmoreFragment extends Fragment {
         return rootView;
     }
 
-    private void getRoutes() {
-        routesList = (ArrayList<Route>) ((RouteActivity) getActivity()).getRouteItems();
-        for (Route route : routesList) {
-            if (route.getRouteTag().equals("P")) {
-                portmoreRoutesList.add(route);
+    private void setUpRoutes(String routeTag) {
+        if (!routeTag.equals("")) {
+            routesList = (ArrayList<Route>) ((RouteActivity) getActivity()).getRouteItems();
+            for (Route route : routesList) {
+                if (route.getRouteTag().equals(routeTag)) {
+                    rList.add(route);
+                }
             }
         }
     }
