@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import com.route876.R;
 import com.route876.fragments.homefragments.MyRouteFragment;
@@ -60,6 +61,9 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        if (getmTabLayout().getVisibility() == View.GONE) {
+            mTabLayout.setVisibility(View.VISIBLE);
+        }
     }
 
     public class ViewPagerHomeSectionAdapter extends FragmentPagerAdapter {
