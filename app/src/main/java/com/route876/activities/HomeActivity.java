@@ -61,8 +61,9 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        if (getmTabLayout().getVisibility() == View.GONE) {
+        if (mTabLayout.getVisibility() == View.GONE) {
             mTabLayout.setVisibility(View.VISIBLE);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
     }
 

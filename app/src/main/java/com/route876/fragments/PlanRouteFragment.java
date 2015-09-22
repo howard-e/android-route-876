@@ -50,6 +50,7 @@ public class PlanRouteFragment extends Fragment {
             case android.R.id.home:
                 getActivity().onBackPressed();
                 ((HomeActivity)getActivity()).getmTabLayout().setVisibility(View.VISIBLE);
+                ((HomeActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
             default:
                 break;
         }

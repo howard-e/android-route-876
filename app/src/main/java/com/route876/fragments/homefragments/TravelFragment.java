@@ -76,7 +76,7 @@ public class TravelFragment extends Fragment {
 
             View gridView;
             if (convertView == null) {
-                gridView = inflater.inflate(R.layout.travel_card_item, null);
+                gridView = inflater.inflate(R.layout.item_travel_card, null);
 
                 TextView textView = (TextView) gridView.findViewById(R.id.card_title);
                 textView.setText(travelOptions[position]);
