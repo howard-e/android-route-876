@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">AndroidRoute876</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="jutc_string">JUTC</string>
+    <string name="plan_route">Plan Route</string>
+    <string name="near_me">Near Me</string>
+    <string name="title_kingston">Kingston</string>
+    <string name="title_portmore">Portmore</string>
+    <string name="title_spanish_town">Spanish Town</string>
+    <string name="application_id">U3E00TB7PMpeTujvbXbGH0S4Dv9QuhJR5t9ieCkh</string>
+    <string name="client_key">xDMM71mWYqlU43oyGu4kK8Z4FZgUWMHgiUjYD2LQ</string>
+    <string name="title_route_stops">Route Stops</string>
+    <string name="title_along_route">Along Route</string>
+    <string name="title_schedule">Schedule</string>
+    <string name="string_search_routes">Search Routes</string>
+    <string name="coaster_string">Coaster</string>
+    <string name="taxi_string">Taxi</string>
+    <string name="title_mode">Mode</string>
+    <string name="title_to">To</string>
+    <string name="title_from">From</string>
+
+    <string-array name="spinner_locations_from">
+        <item>Where do we start?</item>
+        <item>Kingston</item>
+        <item>Portmore</item>
+        <item>Mobay</item>
+    </string-array>
+
+    <string-array name="spinner_locations_to">
+        <item>What\'s your destination?</item>
+        <item>Kingston</item>
+        <item>Portmore</item>
+        <item>Mobay</item>S
+    </string-array>
+</resources>
