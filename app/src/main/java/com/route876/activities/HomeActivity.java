@@ -62,9 +62,15 @@ public class HomeActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         if (mTabLayout.getVisibility() == View.GONE) {
+//            Animation bottomDown = AnimationUtils.loadAnimation(this, R.anim.bottom_down);
+//            mTabLayout.startAnimation(bottomDown);
             mTabLayout.setVisibility(View.VISIBLE);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
+    }
+
+    public TabLayout getmTabLayout() {
+        return mTabLayout;
     }
 
     public class ViewPagerHomeSectionAdapter extends FragmentPagerAdapter {
@@ -98,9 +104,5 @@ public class HomeActivity extends AppCompatActivity {
         public int getCount() {
             return mNumOfTabs;
         }
-    }
-
-    public TabLayout getmTabLayout() {
-        return mTabLayout;
     }
 }

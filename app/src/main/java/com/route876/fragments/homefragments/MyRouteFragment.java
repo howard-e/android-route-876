@@ -73,6 +73,12 @@ public class MyRouteFragment extends Fragment {
         planRouteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                Animation bottomUp = AnimationUtils.loadAnimation(getActivity(), R.anim.bottom_up);
+//                ((HomeActivity) getActivity()).getmTabLayout().startAnimation(bottomUp);
+//                ((HomeActivity) getActivity()).getmTabLayout().setVisibility(View.GONE);
+//
+//                ((HomeActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
                 FragmentManager fm = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fm.beginTransaction();
                 fragmentTransaction.setCustomAnimations(R.anim.y_enter, R.anim.y_exit, R.anim.y_pop_enter, R.anim.y_pop_exit);

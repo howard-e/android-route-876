@@ -24,7 +24,10 @@ public class PlanRouteFragment extends Fragment {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
         // TODO: Hide TabLayout when opened
-        ((HomeActivity)getActivity()).getmTabLayout().setVisibility(View.GONE);
+//        Animation bottomUp = AnimationUtils.loadAnimation(getActivity(), R.anim.bottom_up);
+//        ((HomeActivity) getActivity()).getmTabLayout().startAnimation(bottomUp);
+        ((HomeActivity) getActivity()).getmTabLayout().setVisibility(View.GONE);
+
         ((HomeActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
@@ -49,6 +52,8 @@ public class PlanRouteFragment extends Fragment {
                 return true;
             case android.R.id.home:
                 getActivity().onBackPressed();
+//                Animation bottomDown = AnimationUtils.loadAnimation(getActivity(), R.anim.bottom_down);
+//                ((HomeActivity)getActivity()).getmTabLayout().startAnimation(bottomDown);
                 ((HomeActivity)getActivity()).getmTabLayout().setVisibility(View.VISIBLE);
                 ((HomeActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
             default:
