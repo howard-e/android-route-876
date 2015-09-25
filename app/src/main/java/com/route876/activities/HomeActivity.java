@@ -65,7 +65,7 @@ public class HomeActivity extends AppCompatActivity {
 //            Animation bottomDown = AnimationUtils.loadAnimation(this, R.anim.bottom_down);
 //            mTabLayout.startAnimation(bottomDown);
             mTabLayout.setVisibility(View.VISIBLE);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         }
     }
 

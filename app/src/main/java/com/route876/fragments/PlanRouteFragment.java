@@ -40,7 +40,7 @@ public class PlanRouteFragment extends Fragment {
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.plan_route_settings, menu);
+        inflater.inflate(R.menu.menu_plan_route, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
 

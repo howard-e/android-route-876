@@ -17,7 +17,7 @@
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/button_selector.xml" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/acitivty_splash.xml" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_jutc.xml" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/menu/plan_route_settings.xml" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/menu/menu_plan_route.xml" charset="windows-1252" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

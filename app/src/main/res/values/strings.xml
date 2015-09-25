@@ -18,6 +18,9 @@
     <string name="title_mode">Mode</string>
     <string name="title_to">To</string>
     <string name="title_from">From</string>
+    <string name="string_search">Search</string>
+    <string name="search_hint">Search for Bus #\'s, Locations, Places, etc ...</string>
+    <string name="search_result">Result</string>
 
     <string-array name="spinner_locations_from">
         <item>Where do we start?</item>
