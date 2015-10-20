@@ -152,37 +152,6 @@ public class RouteInfoFragment extends Fragment {
         return super.onOptionsItemSelected(item);
     }
 
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
-        public SectionsPagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            Fragment fragment = null;
-            Bundle args = new Bundle();
-            switch (position) {
-                case 0:
-                    args.putStringArrayList("BusVias", busVias);
-                    fragment = new RouteStopsFragment();
-                    fragment.setArguments(args);
-                    break;
-                case 1:
-                    fragment = new AlongRouteFragment();
-                    break;
-                case 2:
-                    fragment = new ScheduleFragment();
-                    break;
-            }
-            return fragment;
-        }
-
-        @Override
-        public int getCount() {
-            return 3;
-        }
-    }
-
     private String getDirectionsUrl(LatLng origin, LatLng dest) {
         String str_origin = "origin=" + origin.latitude + "," + origin.longitude;
         String str_dest = "destination=" + dest.latitude + "," + dest.longitude;
@@ -221,6 +190,37 @@ public class RouteInfoFragment extends Fragment {
             }
         }
         return data;
+    }
+
+    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+        public SectionsPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            Fragment fragment = null;
+            Bundle args = new Bundle();
+            switch (position) {
+                case 0:
+                    args.putStringArrayList("BusVias", busVias);
+                    fragment = new RouteStopsFragment();
+                    fragment.setArguments(args);
+                    break;
+                case 1:
+                    fragment = new AlongRouteFragment();
+                    break;
+                case 2:
+                    fragment = new ScheduleFragment();
+                    break;
+            }
+            return fragment;
+        }
+
+        @Override
+        public int getCount() {
+            return 3;
+        }
     }
 
     private class DownloadTask extends AsyncTask<String, Void, String> {

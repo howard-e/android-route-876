@@ -36,6 +36,7 @@ public class ParseRoute {
             for (ParseObject parseObject : parseObjectList) {
                 Route route = new Route();
                 localStoreInfo = true;
+                parseObject.pinInBackground();
 
                 route.setId(parseObject.getInt("route_ID"));
                 route.setRouteNum(parseObject.getString("routeNum"));
@@ -48,7 +49,7 @@ public class ParseRoute {
                 route.setRouteStops(routeStops);
 
                 routeList.add(route);
-                parseObject.pinInBackground();
+//                parseObject.pinInBackground();
             }
         } catch (ParseException e) {
             Log.e("Parse Error: ", e.getMessage());

@@ -9,6 +9,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.Toast;
 
 import com.route876.R;
@@ -35,8 +36,30 @@ public class PlanRouteFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_plan_route, container, false);
+        CheckBox jutcCheckBox = (CheckBox) rootView.findViewById(R.id.checkbox_jutc);
+        CheckBox coasterCheckBox = (CheckBox) rootView.findViewById(R.id.checkbox_coaster);
+        CheckBox taxiCheckBox = (CheckBox) rootView.findViewById(R.id.checkbox_taxi);
+
+        if (isChecked(jutcCheckBox)) {
+
+        }
+
+        if (isChecked(coasterCheckBox)) {
+
+        }
+
+        if (isChecked(taxiCheckBox)) {
+
+        }
+
         return rootView;
     }
+
+    public boolean isChecked(CheckBox checkBox) {
+        return checkBox.isChecked();
+    }
+
+
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -54,7 +77,7 @@ public class PlanRouteFragment extends Fragment {
                 getActivity().onBackPressed();
 //                Animation bottomDown = AnimationUtils.loadAnimation(getActivity(), R.anim.bottom_down);
 //                ((HomeActivity)getActivity()).getmTabLayout().startAnimation(bottomDown);
-                ((HomeActivity)getActivity()).getmTabLayout().setVisibility(View.VISIBLE);
+                ((HomeActivity) getActivity()).getmTabLayout().setVisibility(View.VISIBLE);
                 ((HomeActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
             default:
                 break;
