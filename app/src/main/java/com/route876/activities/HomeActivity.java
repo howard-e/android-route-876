@@ -1,24 +1,28 @@
 package com.route876.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.route876.R;
 import com.route876.fragments.homefragments.MyRouteFragment;
-import com.route876.fragments.homefragments.NewsFragment;
 import com.route876.fragments.homefragments.TravelFragment;
 
 public class HomeActivity extends AppCompatActivity {
 
     private ViewPager mViewPager;
     private TabLayout mTabLayout;
+    private DrawerLayout mDrawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +30,8 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
+
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
 
         mTabLayout = (TabLayout) findViewById(R.id.tabLayout);
         mViewPager = (ViewPager) findViewById(R.id.viewPager);
@@ -35,7 +41,7 @@ public class HomeActivity extends AppCompatActivity {
     private void setupTabs() {
         mTabLayout.addTab(mTabLayout.newTab().setText("Travel"));
         mTabLayout.addTab(mTabLayout.newTab().setText("Route"));
-        mTabLayout.addTab(mTabLayout.newTab().setText("News"));
+//        mTabLayout.addTab(mTabLayout.newTab().setText("News"));
 
         ViewPagerHomeSectionAdapter viewPagerHomeSectionAdapter = new ViewPagerHomeSectionAdapter(getSupportFragmentManager(), mTabLayout.getTabCount());
         mViewPager.setAdapter(viewPagerHomeSectionAdapter);
@@ -60,13 +66,37 @@ public class HomeActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
-        if (mTabLayout.getVisibility() == View.GONE) {
-//            Animation bottomDown = AnimationUtils.loadAnimation(this, R.anim.bottom_down);
-//            mTabLayout.startAnimation(bottomDown);
-            mTabLayout.setVisibility(View.VISIBLE);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        if (mDrawerLayout.isDrawerOpen(GravityCompat.END))
+            mDrawerLayout.closeDrawer(GravityCompat.END);
+        else
+            super.onBackPressed();
+//        if (mTabLayout.getVisibility() == View.GONE) {
+////            Animation bottomDown = AnimationUtils.loadAnimation(this, R.anim.bottom_down);
+////            mTabLayout.startAnimation(bottomDown);
+//            mTabLayout.setVisibility(View.VISIBLE);
+//            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+//        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_home_activity, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                startActivity(new Intent(this, SettingsActivity.class));
+                break;
+            case R.id.action_news:
+                mDrawerLayout.openDrawer(GravityCompat.END);
+                break;
+            default:
+                break;
         }
+        return super.onOptionsItemSelected(item);
     }
 
     public TabLayout getmTabLayout() {
@@ -91,9 +121,9 @@ public class HomeActivity extends AppCompatActivity {
                 case 1:
                     fragment = new MyRouteFragment();
                     break;
-                case 2:
-                    fragment = new NewsFragment();
-                    break;
+//                case 2:
+//                    fragment = new NewsFragment();
+//                    break;
                 default:
                     break;
             }

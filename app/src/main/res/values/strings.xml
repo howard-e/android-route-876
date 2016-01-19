@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AndroidRoute876</string>
+    <string name="app_name">Route876</string>
     <string name="title_activity_maps">Map</string>
     <string name="jutc_string">JUTC</string>
     <string name="plan_route">Plan Route</string>
@@ -21,6 +21,9 @@
     <string name="string_search">Search</string>
     <string name="search_hint">Search for Bus #\'s, Locations, Places, etc ...</string>
     <string name="search_result">Result</string>
+    <string name="title_activity_home">Home</string>
+    <string name="title_activity_route">Route</string>
+    <string name="string_latest_news">Latest News</string>
 
     <string-array name="spinner_locations_from">
         <item>Where do we start?</item>
@@ -28,11 +31,111 @@
         <item>Portmore</item>
         <item>Mobay</item>
     </string-array>
-
     <string-array name="spinner_locations_to">
         <item>What\'s your destination?</item>
         <item>Kingston</item>
         <item>Portmore</item>
         <item>Mobay</item>S
     </string-array>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+    <!-- General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="action_settings">Settings</string>
+    <string name="string_author_date_separator">|</string>
+
+    <!-- Settings for RSS Feed -->
+    <string name="pref_header_rss_feed">RSS Feed</string>
+    <string-array name="rss_feed_options">
+        <item>Jamaica Gleaner - Lead Stories</item>
+        <item>Jamaica Gleaner - News Stories</item>
+        <item>Jamaica Gleaner - Sports Stories</item>
+        <item>Jamaica Gleaner - Business Stories</item>
+        <item>Jamaica Gleaner - Entertainment Stories</item>
+        <item>Jamaica Gleaner - Letters</item>
+        <item>Jamaica Gleaner - Commentary</item>
+        <item>Jamaica Gleaner - Arts and Leisure</item>
+        <item>Jamaica Gleaner - In Focus</item>
+        <item>Jamaica Gleaner - Flair</item>
+        <item>Jamaica Gleaner - Social</item>
+        <item>Jamaica Gleaner - Caribbean</item>
+        <item>Jamaica Gleaner - International</item>
+        <item>Sports Jamaica - Headlines</item>
+        <item>Jamaica Star - News Stories</item>
+        <item>Jamaica Star - Entertainment</item>
+    </string-array>
+    <string-array name="rss_feed_options_values">
+        <item>JGleaner Lead</item>
+        <item>JGleaner News</item>
+        <item>JGleaner Sports</item>
+        <item>JGleaner Business</item>
+        <item>JGleaner Entertainment</item>
+        <item>JGleaner Letters</item>
+        <item>JGleaner Commentary</item>
+        <item>JGleaner Arts</item>
+        <item>JGleaner Focus</item>
+        <item>JGleaner Flair</item>
+        <item>JGleaner Social</item>
+        <item>JGleaner Caribbean</item>
+        <item>JGleaner International</item>
+        <item>SJamaica Headlines</item>
+        <item>JStar News</item>
+        <item>JStar Entertainment</item>
+    </string-array>
+
+    <string name="pref_title_rss_feed_options">Select where to get RSS Feed from</string>
 </resources>

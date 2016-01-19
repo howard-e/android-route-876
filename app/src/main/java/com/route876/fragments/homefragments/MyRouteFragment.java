@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -30,7 +31,9 @@ import com.route876.fragments.PlanRouteFragment;
  */
 public class MyRouteFragment extends Fragment {
     private final static int DEFAULT_ZOOM_LEVEL = 10;
-    private final static LatLng UWI_Mona = new LatLng(18.004427300000000000, -76.746225700000020000); // TODO: Remove when no longer in need of dummy location
+
+    private final static LatLng UWI_Mona = new LatLng(18.004427300000000000, -76.746225700000020000);
+    // TODO: Remove when no longer in need of dummy location
 
 //    private static final HttpTransport HTTP_TRANSPORT = new NetHttpTransport();
 //    private static final String API_KEY = "AIzaSyCi6DW6GAo_6ZfIJird5p0CHxsNH8hNgLA";
@@ -44,6 +47,8 @@ public class MyRouteFragment extends Fragment {
     private double _latitude;
     private double _longitude;
     private double _radius;
+
+    private Vibrator vibrator;
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -60,6 +65,7 @@ public class MyRouteFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+        vibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
     }
 
     @Nullable
@@ -78,7 +84,7 @@ public class MyRouteFragment extends Fragment {
 //                ((HomeActivity) getActivity()).getmTabLayout().setVisibility(View.GONE);
 //
 //                ((HomeActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+                vibrator.vibrate(40);
                 FragmentManager fm = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fm.beginTransaction();
                 fragmentTransaction.setCustomAnimations(R.anim.y_enter, R.anim.y_exit, R.anim.y_pop_enter, R.anim.y_pop_exit);
@@ -90,6 +96,7 @@ public class MyRouteFragment extends Fragment {
         nearMeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                vibrator.vibrate(40);
                 //TODO: Use Google Places API to display bus stops close to user current location based on a certain radius
                 getCurrentLocation();
             }

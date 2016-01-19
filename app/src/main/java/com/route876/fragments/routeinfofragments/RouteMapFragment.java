@@ -42,7 +42,7 @@ import java.util.Locale;
 /**
  * Created by Howard on 9/13/2015.
  */
-public class RouteInfoFragment extends Fragment {
+public class RouteMapFragment extends Fragment {
 
     private GoogleMap mMap;
     private SupportMapFragment supportMapFragment;
