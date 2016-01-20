@@ -1,6 +1,5 @@
 package com.route876.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -87,9 +86,9 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_settings:
-                startActivity(new Intent(this, SettingsActivity.class));
-                break;
+//            case R.id.action_settings:
+//                startActivity(new Intent(this, SettingsActivity.class));
+//                break;
             case R.id.action_news:
                 mDrawerLayout.openDrawer(GravityCompat.END);
                 break;

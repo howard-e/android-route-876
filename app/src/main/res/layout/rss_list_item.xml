@@ -37,6 +37,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/rss_descrip_view"
+        android:padding="2dp"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="@color/gray"
         android:textStyle="italic|bold" />

@@ -9,7 +9,6 @@
     <color name="colorIcons">#FFFFFF</color>
     <color name="colorDivider">#B6B6B6</color>
 
-
     <color name="white">#FFFFFF</color>
     <color name="yellow">#FFFF00</color>
     <color name="fuchsia">#FF00FF</color>
@@ -166,13 +165,6 @@
     <color name="DarkBlue">#00008B</color>
     <color name="Navy">#000080</color>
     <color name="Black">#000000</color>
-    <color name="actionbar_text">@color/DarkGray</color>
-    <color name="actionbar_color">#00000000</color>
-    <color name="general">@color/DarkGray</color>
-    <color name="tab_background">#1A000000</color>
-
-
-
     <color name="Gunmetal">#2C3539</color>
     <color name="Midnight">#2B1B17</color>
     <color name="Charcoal">#34282C</color>
