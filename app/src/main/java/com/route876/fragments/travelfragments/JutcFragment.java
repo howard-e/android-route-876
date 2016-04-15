@@ -72,13 +72,21 @@ public class JutcFragment extends Fragment {
 
     public static class JutcStartLocationFragment extends Fragment {
 
+        static ListView routeListView;
+        static CustomRouteAdapter customRouteAdapter;
         String startLocationString;
         ArrayList<Route> routesList = new ArrayList<>();
         ArrayList<Route> rList = new ArrayList<>();
         ArrayList<String> routeStops = new ArrayList<>();
-
-        ListView routeListView;
         RouteMapFragment routeMapFragment = new RouteMapFragment();
+
+        public static ListView getRouteListView() {
+            return routeListView;
+        }
+
+        public static CustomRouteAdapter getCustomRouteAdapter() {
+            return customRouteAdapter;
+        }
 
         @Override
         public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -107,8 +115,9 @@ public class JutcFragment extends Fragment {
             View rootView = inflater.inflate(R.layout.route_listview, container, false);
             routeListView = (ListView) rootView.findViewById(R.id.route_listview);
             routeMapFragment = new RouteMapFragment();
-            CustomRouteAdapter customRouteAdapter = new CustomRouteAdapter(getActivity(), rList);
 
+            customRouteAdapter = new CustomRouteAdapter(getActivity(), rList);
+            routeListView.setAdapter(customRouteAdapter);
             routeListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -139,13 +148,13 @@ public class JutcFragment extends Fragment {
                 }
             });
             routeListView.setHeaderDividersEnabled(false);
-            routeListView.setAdapter(customRouteAdapter);
+            routeListView.setTextFilterEnabled(true);
             return rootView;
         }
 
         private void setUpRoutes(String routeTag) {
             if (!routeTag.equals("")) {
-                routesList = (ArrayList<Route>) ((RouteActivity) getActivity()).getRouteItems();
+                routesList = ((RouteActivity) getActivity()).getRouteItems();
                 for (Route route : routesList) {
                     if (route.getRouteTag().equals(routeTag)) {
                         rList.add(route);
@@ -155,7 +164,7 @@ public class JutcFragment extends Fragment {
         }
     }
 
-    public class StartLocationPagerAdapter extends FragmentPagerAdapter {
+    private class StartLocationPagerAdapter extends FragmentPagerAdapter {
         public StartLocationPagerAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
         }

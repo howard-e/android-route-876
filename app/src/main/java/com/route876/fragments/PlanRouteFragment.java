@@ -70,7 +70,7 @@ public class PlanRouteFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_plan_route_search:
+            case R.id.action_plan_route:
                 Toast.makeText(getActivity(), "Do some database checking based on what's selected", Toast.LENGTH_SHORT).show();
                 return true;
             case android.R.id.home:

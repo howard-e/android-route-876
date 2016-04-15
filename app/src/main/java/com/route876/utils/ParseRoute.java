@@ -18,7 +18,7 @@ public class ParseRoute {
 
     private boolean localStoreInfo = false;
     private Context context;
-    private List<Route> routeList = new ArrayList<>();
+    private ArrayList<Route> routeList = new ArrayList<>();
 
     public ParseRoute(Context context) {
         this.context = context;
@@ -57,7 +57,7 @@ public class ParseRoute {
         }
     }
 
-    public List<Route> getRouteList() {
+    public ArrayList<Route> getRouteList() {
         return routeList;
     }
 }

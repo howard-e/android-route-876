@@ -47,11 +47,11 @@
             android:name=".activities.RouteActivity"
             android:configChanges="orientation"
             android:label="@string/title_activity_route"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
-                <action android:name="android.intent.action.VIEW" />
             </intent-filter>
 
             <meta-data

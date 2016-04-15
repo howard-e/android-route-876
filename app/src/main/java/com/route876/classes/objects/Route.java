@@ -6,10 +6,10 @@ import java.util.List;
  * Created by Howard on 9/13/2015.
  */
 public class Route {
-    public int id;
-    public String routeTo, routeFrom, routeVia, routeNum, routeTag;
-    public String routePrice;
-    public List<String> routeStops;
+    private int id;
+    private String routeTo, routeFrom, routeVia, routeNum, routeTag;
+    private String routePrice;
+    private List<String> routeStops;
 
     public int getId() {
         return id;
