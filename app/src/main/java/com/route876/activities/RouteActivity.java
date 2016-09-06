@@ -14,7 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.route876.R;
-import com.route876.classes.objects.Route;
+import com.route876.objects.Route;
 import com.route876.fragments.travelfragments.CoasterFragment;
 import com.route876.fragments.travelfragments.JutcFragment;
 import com.route876.fragments.travelfragments.PrivateTaxiFragment;

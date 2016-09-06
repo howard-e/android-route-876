@@ -1,4 +1,4 @@
-package com.route876.classes.objects;
+package com.route876.objects;
 
 import java.util.List;
 

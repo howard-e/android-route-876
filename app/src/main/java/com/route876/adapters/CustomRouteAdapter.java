@@ -1,4 +1,4 @@
-package com.route876.classes.adapters;
+package com.route876.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,7 +10,7 @@ import android.widget.Filterable;
 import android.widget.TextView;
 
 import com.route876.R;
-import com.route876.classes.objects.Route;
+import com.route876.objects.Route;
 
 import java.util.ArrayList;
 

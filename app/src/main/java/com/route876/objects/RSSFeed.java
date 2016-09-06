@@ -1,4 +1,4 @@
-package com.route876.classes.objects;
+package com.route876.objects;
 
 /**
  * Created by Howard on 1/15/2016.

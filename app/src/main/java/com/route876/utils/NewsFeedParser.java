@@ -3,7 +3,7 @@ package com.route876.utils;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
-import com.route876.classes.objects.RSSFeed;
+import com.route876.objects.RSSFeed;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;

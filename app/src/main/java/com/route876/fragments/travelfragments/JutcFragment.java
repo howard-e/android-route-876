@@ -18,8 +18,8 @@ import android.widget.TextView;
 
 import com.route876.R;
 import com.route876.activities.RouteActivity;
-import com.route876.classes.adapters.CustomRouteAdapter;
-import com.route876.classes.objects.Route;
+import com.route876.adapters.CustomRouteAdapter;
+import com.route876.objects.Route;
 import com.route876.fragments.routeinfofragments.RouteMapFragment;
 
 import java.util.ArrayList;

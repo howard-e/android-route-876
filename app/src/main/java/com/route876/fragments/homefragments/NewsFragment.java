@@ -24,7 +24,7 @@ import android.widget.TextView;
 
 import com.route876.R;
 import com.route876.activities.WebViewActivity;
-import com.route876.classes.objects.RSSFeed;
+import com.route876.objects.RSSFeed;
 import com.route876.utils.NewsFeedParser;
 
 import java.util.ArrayList;
